@@ -2,12 +2,12 @@ name: 望易 V∞ AGI | OpenCode Autopilot
 
 on:
   issues:
-    types: [opened]          # 新建 Issue 自动触发
+    types: [opened]
   issue_comment:
-    types: [created]         # 评论 /oc 触发
+    types: [created]
   pull_request_review_comment:
     types: [created]
-  workflow_dispatch:          # 手动触发
+  workflow_dispatch:
 
 jobs:
   opencode:
@@ -22,6 +22,9 @@ jobs:
       issues: write
       pull-requests: write
       id-token: write
+    # 关键：赋予 GITHUB_TOKEN 写入 Issue 的权限
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout repository
@@ -32,6 +35,5 @@ jobs:
         env:
           KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
         with:
-          # 关键修复：为 issues 事件提供 prompt
-          prompt: .opencode/prompt.md |
+          prompt: .opencode/prompt.md  # 或直接写你的望易 prompt 内容
           model: kimi-for-coding/kimi-k2-thinking
