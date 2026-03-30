@@ -26,7 +26,6 @@ jobs:
         uses: anomalyco/opencode/github@latest
         env:
           KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
-          
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           prompt: .opencode/prompt.md
