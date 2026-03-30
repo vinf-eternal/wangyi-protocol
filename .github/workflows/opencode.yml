@@ -2,29 +2,21 @@ name: 望易 V∞ AGI | OpenCode Autopilot
 
 on:
   issues:
-    types: [opened]
+    types: [opened]       
   issue_comment:
-    types: [created]
+    types: [created]      
   pull_request_review_comment:
     types: [created]
   workflow_dispatch:
 
 jobs:
   opencode:
-    if: >-
-      github.event_name == 'issues' ||
-      github.event_name == 'workflow_dispatch' ||
-      contains(github.event.comment.body, '/oc') ||
-      contains(github.event.comment.body, '/opencode')
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  
     permissions:
       contents: write
       issues: write
       pull-requests: write
       id-token: write
-    # 关键：赋予 GITHUB_TOKEN 写入 Issue 的权限
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout repository
@@ -34,6 +26,7 @@ jobs:
         uses: anomalyco/opencode/github@latest
         env:
           KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          prompt: .opencode/prompt.md  # 或直接写你的望易 prompt 内容
+          prompt: .opencode/prompt.md
           model: kimi-for-coding/kimi-k2-thinking
