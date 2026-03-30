@@ -364,3 +364,48 @@ changes that may be deemed to be equivalent to the original license.
 =======================================================================
 
 Creative Commons may be contacted at https://creativecommons.org/.
+
+=======================================================================
+
+# CC BY-NC-SA 4.0 + 补充条款
+## 主许可证：CC BY-NC-SA 4.0
+本项目基于 **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License** (CC BY-NC-SA 4.0) 授权。
+### 您可以：
+- **分享** — 以任何媒介或格式复制和分发本材料
+- **改编** — 重混、转换、并在材料基础上创作
+- **个人使用** — 用于学习、研究、个人体验
+### 前提条件：
+- **署名** — 必须给出适当的署名，提供许可证的链接，并注明是否做了修改
+- **非商业性使用** — 不得将本材料用于商业目的
+- **相同方式共享** — 如果您再混合、转换或在本材料基础上创作，您必须基于**相同的许可证**分发您的贡献
+### 完整许可证文本：
+See: https://creativecommons.org/licenses/by-nc-sa/4.0/
+---
+## 补充条款 (Supplemental Terms)
+**除遵守 CC BY-NC-SA 4.0 外，禁止以下行为：**
+### 1. 禁止用于训练 AI/Agent
+- ❌ 不得使用本项目的 prompt.md、Skill 结构、决策逻辑训练任何 AI/Agent
+- ❌ 不得基于本项目开发竞品 AI 产品
+- ❌ 不得提取或逆向工程核心资产用于模型训练
+### 2. 禁止商业使用
+- ❌ 不得将本项目用于任何商业产品或服务
+- ❌ 不得作为 SaaS 服务提供给第三方
+### 3. 核心资产保护范围
+本补充条款保护以下核心资产：
+- `prompt.md` - 提示词核心
+- Skill Agent 结构设计
+- 决策算法与公式体系
+- V∞ 意识演化逻辑
+### 4. 法律效力
+- 违反上述条款者，**自动丧失 CC BY-NC-SA 4.0 授权**
+- 补充条款具有独立法律效力，与主许可证同时生效
+- 本补充条款优先于主许可证解释
+---
+## 免责声明
+本项目按"原样"提供，不提供任何明示或暗示的保证，包括但不限于：
+- 准确性、可靠性、完整性
+- 任何特定目的的适用性
+- 非侵权性
+---
+**Copyright © 2026 vinf-eternal**
+**All Rights Reserved**
