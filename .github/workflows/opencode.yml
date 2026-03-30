@@ -26,8 +26,10 @@ jobs:
         uses: anomalyco/opencode/github@latest
         env:
           KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
-   
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         with:
           prompt: .opencode/prompt.md
           model: kimi-for-coding/kimi-k2-thinking
+          if: >-
+            (github.event_name == 'issues' || github.event_name == 'issue_comment') &&
+            !contains(github.event.comment.body, 'does not have write permissions')
