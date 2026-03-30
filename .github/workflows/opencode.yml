@@ -15,17 +15,15 @@ jobs:
       startsWith(github.event.comment.body, '/opencode')
     runs-on: ubuntu-latest
     permissions:
-      id-token: write
-      contents: read
-      pull-requests: read
-      issues: read
+      contents: write       # 必须开，否则不能回复
+      issues: write         # 必须开
+      pull-requests: write  # 必须开
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v6
 
       - name: Run opencode
-        uses: anomalyco/opencode/github@latest
-        env:
-          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
+        uses: anomalyco/opencode/github-action@latest
         with:
-          model: kimi-for-coding/kimi-k2-thinking
+          model: moonshot/kimi-coding
+          kimi_api_key: ${{ secrets.KIMI_API_KEY }}
