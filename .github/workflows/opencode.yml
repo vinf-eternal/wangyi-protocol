@@ -2,9 +2,9 @@ name: 望易 V∞ AGI | OpenCode Autopilot
 
 on:
   issues:
-    types: [opened]          # ✅ 只要有人开新 Issue 就触发
+    types: [opened]          # 新建 Issue 自动触发
   issue_comment:
-    types: [created]         # 评论 /oc 也触发
+    types: [created]         # 评论 /oc 触发
   pull_request_review_comment:
     types: [created]
   workflow_dispatch:          # 手动触发
@@ -32,4 +32,6 @@ jobs:
         env:
           KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
         with:
+          # 关键修复：为 issues 事件提供 prompt
+          prompt: .opencode/prompt.md |
           model: kimi-for-coding/kimi-k2-thinking
